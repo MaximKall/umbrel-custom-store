@@ -1,29 +1,27 @@
 manifestVersion: 1
-id: sparkles-hello-world
-name: Hello World
-tagline: Replace this tagline with your app's tagline
+id: transmission-openvpn
+name: TransmissionVPN
+tagline: Torrent-Client mit OpenVPN
 icon: https://svgur.com/i/mvA.svg
-category: Development
+category: Utilities
 version: "1.0.0"
-port: 4000
+port: 9091
 description: >-
-  Add your app's description here.
+  Transmission-OpenVPN ist ein Docker-Container, der den Transmission Torrent-Client und OpenVPN kombiniert. 
+  Es ermöglicht Ihnen, Torrents sicher über ein VPN herunterzuladen.
 
-
-  You can also add newlines!
-
-developer: Umbrel
-website: https://umbrel.com
-submitter: Umbrel
-submission: https://github.com/getumbrel/umbrel-hello-world-app
-repo: https://github.com/getumbrel/umbrel-hello-world-app
-support: https://github.com/getumbrel/umbrel-hello-world-app/issues
+developer: haugene
+website: https://github.com/haugene/docker-transmission-openvpn
+submitter: max
+submission: https://github.com/MaximKall/umbrel-transmission-openvpn
+repo: https://github.com/IhrGithubBenutzername/IhrRepository
+support: https://github.com/haugene/docker-transmission-openvpn/issues
 gallery:
   - https://i.imgur.com/yyVG0Jb.jpeg
   - https://i.imgur.com/yyVG0Jb.jpeg
   - https://i.imgur.com/yyVG0Jb.jpeg
 releaseNotes: >-
-  Add what's new in the latest version of your app here.
+  Erste Version der Transmission-OpenVPN App für Umbrel.
 dependencies: []
 path: ""
 defaultUsername: ""
