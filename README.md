@@ -1,4 +1,4 @@
-## Umbrel Community App Store Template
+## Umbrel Community App Store Template for transmission-openvpn
 
 This repository is a template to create an Umbrel Community App Store. These additional app stores allow developers to distribute applications without submitting to the [Official Umbrel App Store](https://github.com/getumbrel/umbrel-apps).
 
