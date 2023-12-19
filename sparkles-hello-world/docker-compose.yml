@@ -1,14 +1,20 @@
 version: "3.7"
 
 services:
-
-  app_proxy:
+  app:
+    image: haugene/transmission-openvpn
+    cap_add:
+      - NET_ADMIN
     environment:
-      # The format here is: <app-id>_<docker-service-name>_1
-      APP_HOST: sparkles-hello-world_server_1
-      APP_PORT: 3000
-    
-  server:
-    image: getumbrel/community-app-store-hello-world:latest
-    user: "1000:1000"
-    init: true
+      - OPENVPN_PROVIDER=Ihr_OpenVPN_Provider
+      - OPENVPN_CONFIG=Ihr_OpenVPN_Config
+      - OPENVPN_USERNAME=Ihr_OpenVPN_Benutzername
+      - OPENVPN_PASSWORD=Ihr_OpenVPN_Passwort
+      - LOCAL_NETWORK=Ihr_Lokales_Netzwerk
+      - TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true
+      - TRANSMISSION_RPC_USERNAME=Ihr_Transmission_Benutzername
+      - TRANSMISSION_RPC_PASSWORD=Ihr_Transmission_Passwort
+    volumes:
+      - ./data:/data
+    ports:
+      - 9091:9091
