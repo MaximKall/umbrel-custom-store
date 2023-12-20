@@ -1,28 +1,45 @@
 manifestVersion: 1
-id: transmission-openvpn
+id: transmissionopenvpn
+category: networking
 name: TransmissionVPN
-tagline: Torrent-Client mit OpenVPN
-icon: https://svgur.com/i/mvA.svg
-category: Utilities
-version: "1.0.0"
-port: 9091
+version: "4.0.4"
+tagline: A fast, easy and free BitTorrent client with VPN
 description: >-
-  Transmission-OpenVPN ist ein Docker-Container, der den Transmission Torrent-Client und OpenVPN kombiniert. 
-  Es ermöglicht Ihnen, Torrents sicher über ein VPN herunterzuladen.
+  Transmission is designed for easy, powerful use. We've set the defaults to just work and it only takes a few clicks to configure advanced features like watch directories, bad peer blocklists, and the web interface. When Ubuntu chose Transmission as its default BitTorrent client, one of the most-cited reasons was its easy learning curve.
 
+
+  Transmission has one of the lowest memory & resource footprints of any major BitTorrent client. Transmission's light overhead is one reason why it is so well suited for home NAS and media servers. Having been used by Western Digital, Zyxel and Belkin, Transmission gives truly impressive performance on almost any compatible hardware.
+
+  
+  Transmission is an open source, volunteer-based project. Unlike some BitTorrent clients, Transmission doesn't play games with its users to make money.
+
+  
+  We don't bundle toolbars, pop-up ads, flash ads, twitter tools, or anything else. It doesn't hold some features back for a payware version. We don't track our users. Our website and forums have no third-party ads or analytics.
+
+
+  ⚠️ Transmission downloads torrents over the Clearnet, not Tor.
 developer: haugene
 website: https://github.com/haugene/docker-transmission-openvpn
-submitter: max
-submission: https://github.com/MaximKall/umbrel-transmission-openvpn
-repo: https://github.com/IhrGithubBenutzername/IhrRepository
-support: https://github.com/haugene/docker-transmission-openvpn/issues
-gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-  - https://i.imgur.com/yyVG0Jb.jpeg
-releaseNotes: >-
-  Erste Version der Transmission-OpenVPN App für Umbrel.
 dependencies: []
-path: ""
+repo: https://github.com/haugene/docker-transmission-openvpn
+support: https://github.com/haugene/docker-transmission-openvpn/issues
+port: 9091
+gallery:
+  - 1.jpg
+  - 2.jpg
+  - 3.jpg
+path: "/transmission/web/"
 defaultUsername: ""
 defaultPassword: ""
+torOnly: false
+releaseNotes: >-
+  This release updates Transmission from version 4.0.3 to 4.0.4.
+
+  This is a bugfix-only release.
+  
+
+  Full release notes are available at https://github.com/transmission/transmission/releases
+permissions:
+  - STORAGE_DOWNLOADS
+submitter: max
+submission: https://github.com/MaximKall/umbrel-transmission-openvpn
