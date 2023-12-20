@@ -1,29 +1,29 @@
-version: "3.3"
+version: "3.7"
 
 services:
   app_proxy:
-    image: haugene/transmission-openvpn
     environment:
       APP_HOST: custom-transmission-openvpn_server_1
       APP_PORT: 9091
 
   server:
+    image: haugene/transmission-openvpn
     cap_add:
       - NET_ADMIN
-    image: haugene/transmission-openvpn
     environment:
+      - OPENVPN_PROVIDER=PIA
+      - OPENVPN_CONFIG=france
+      - OPENVPN_USERNAME=user
+      - OPENVPN_PASSWORD=pass
+      - LOCAL_NETWORK=192.168.0.0/16
       - PUID=1000
       - PGID=1000
-      - OPENVPN_PROVIDER=set
-      - OPENVPN_CONFIG=set
-      - OPENVPN_USERNAME=set
-      - OPENVPN_PASSWORD=set
-      - LOCAL_NETWORK=192.168.1.0/24
     volumes:
-      - ${APP_DATA_DIR}/data/config:/config
-      - ${UMBREL_ROOT}/data/storage/downloads:/downloads
-      - /home/server/drive
+      - '/home/server/umbrel/app-data/custom-transmission-openvpn/data:/data'
+      - '/home/server/umbrel/app-data/custom-transmission-openvpn/data/config:/config'
+      - 'home/server/drive'
     ports:
-      - 51413:51413
-      - 51413:51413/udp
+      - '9091:9091'
+      - '51413:51413'
+      - '51413:51413/udp'
     restart: on-failure
