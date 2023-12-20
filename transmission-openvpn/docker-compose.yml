@@ -1,36 +1,29 @@
-version: "3.7"
+version: "3.3"
 
 services:
   app_proxy:
-    image: getumbrel/app-proxy:v0.5.2
+    image: haugene/transmission-openvpn
     environment:
-      APP_HOST: server
+      APP_HOST: transmission_openvpn_server_1
       APP_PORT: 9091
-    networks:
-      default:
-        ipv4_address: 10.21.21.50
 
   server:
-    image: haugene/transmission-openvpn:latest
-    container_name: transmission-openvpn
-    volumes:
-      - ${APP_DATA_DIR}/data:/data
-    environment:
-      - OPENVPN_PROVIDER=Ihr_OpenVPN_Provider
-      - OPENVPN_CONFIG=Ihr_OpenVPN_Config
-      - OPENVPN_USERNAME=Ihr_OpenVPN_Benutzername
-      - OPENVPN_PASSWORD=Ihr_OpenVPN_Passwort
-      - LOCAL_NETWORK=Ihr_Lokales_Netzwerk
-      - TRANSMISSION_RPC_AUTHENTICATION_REQUIRED=true
-      - TRANSMISSION_RPC_USERNAME=Ihr_Transmission_Benutzername
-      - TRANSMISSION_RPC_PASSWORD=Ihr_Transmission_Passwort
     cap_add:
       - NET_ADMIN
-    networks:
-      default:
-        ipv4_address: 10.21.21.51
-
-networks:
-  default:
-    external:
-      name: umbrel_main_network
+    image: haugene/transmission-openvpn
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - OPENVPN_PROVIDER=set
+      - OPENVPN_CONFIG=set
+      - OPENVPN_USERNAME=set
+      - OPENVPN_PASSWORD=set
+      - LOCAL_NETWORK=192.168.1.0/24
+    volumes:
+      - ${APP_DATA_DIR}/data/config:/config
+      - ${UMBREL_ROOT}/data/storage/downloads:/downloads
+      - /home/server/drive
+    ports:
+      - 51413:51413
+      - 51413:51413/udp
+    restart: on-failure
