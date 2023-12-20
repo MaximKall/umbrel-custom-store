@@ -1,7 +1,7 @@
 manifestVersion: 1
-id: transmission
+id: custom-transmission-openvpn
 category: networking
-name: Transmission
+name: TransmissionVPN
 version: "4.0.4"
 tagline: A fast, easy and free BitTorrent client
 description: >-
@@ -41,5 +41,5 @@ releaseNotes: >-
   Full release notes are available at https://github.com/transmission/transmission/releases
 permissions:
   - STORAGE_DOWNLOADS
-submitter: Umbrel
+submitter: me
 submission: https://github.com/getumbrel/umbrel-apps/commit/60878f278d544b204d8e7c96240c797f43a9b319
