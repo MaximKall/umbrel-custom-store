@@ -10,6 +10,8 @@ services:
     image: haugene/transmission-openvpn
     cap_add:
       - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
     environment:
       - OPENVPN_PROVIDER=PIA
       - OPENVPN_CONFIG=france
