@@ -2,7 +2,7 @@ manifestVersion: 1
 id: custom-prowlarr
 category: media
 name: Prowlarr
-icon: https://static-00.iconduck.com/assets.00/prowlarr-icon-2048x2048-2pxvehfe.png
+icon: https://github.com/getumbrel/umbrel-apps-gallery/blob/master/prowlarr/icon.svg
 version: "0.4.4-nightly-build-2"
 tagline: Prowlarr is an indexer manager/proxy
 description: >-
@@ -14,9 +14,9 @@ repo: https://github.com/Prowlarr/Prowlarr
 support: https://github.com/Prowlarr/Prowlarr/issues
 port: 9696
 gallery:
-  - 1.jpg
-  - 2.jpg
-  - 3.jpg
+  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/prowlarr/1.jpg
+  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/prowlarr/2.jpg
+  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/prowlarr/3.jpg
 path: ""
 defaultUsername: ""
 defaultPassword: ""
