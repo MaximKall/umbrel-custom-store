@@ -2,6 +2,7 @@ manifestVersion: 1
 id: custom-transmission-openvpn
 category: networking
 name: TransmissionVPN
+icon: https://upload.wikimedia.org/wikipedia/commons/6/6d/Transmission_icon.png
 version: "4.0.4"
 tagline: A fast, easy and free BitTorrent client
 description: >-
