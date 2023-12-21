@@ -1,7 +1,7 @@
 manifestVersion: 1
 id: custom-prowlarr
 category: media
-name: Prowlarrwo
+name: Prowlarr
 version: "0.4.4-nightly-build-2"
 tagline: Prowlarr is an indexer manager/proxy
 description: >-
