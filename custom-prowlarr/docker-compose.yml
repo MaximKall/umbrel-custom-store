@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: prowlarr_server_1
+      APP_HOST: custom-prowlarr_server_1
       APP_PORT: 9696
       PROXY_AUTH_WHITELIST: "/api/*"
 
@@ -24,13 +24,13 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/config:/config
     environment:
-      APP_ID: "prowlarr"
-      APP_URL: "http://prowlarr_server_1:9696"
-      TRANSMISSION_HOST: "transmission_server_1"
+      APP_ID: "custom-prowlarr"
+      APP_URL: "http://custom-prowlarr_server_1:9696"
+      TRANSMISSION_HOST: "custom-transmission-openvpn_server_1"
       TRANSMISSION_PORT: 9091
-      RADARR_URL: "http://radarr_server_1:7878"
+      RADARR_URL: "http://custom-radarr_server_1:7878"
       RADARR_CONFIG_XML: "${APP_PROWLARR_RADARR_CONFIG_XML}"
-      LIDARR_URL: "http://lidarr_server_1:8686"
+      LIDARR_URL: "http://custom-lidarr_server_1:8686"
       LIDARR_CONFIG_XML: "${APP_PROWLARR_LIDARR_CONFIG_XML}"
-      SONARR_URL: "http://sonarr_server_1:8989"
+      SONARR_URL: "http://custom-sonarr_server_1:8989"
       SONARR_CONFIG_XML: "${APP_PROWLARR_SONARR_CONFIG_XML}"
