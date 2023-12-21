@@ -1,0 +1,32 @@
+manifestVersion: 1.1
+id: custom-sonarr
+category: media
+name: Sonarr
+icon: https://raw.githubusercontent.com/getumbrel/umbrel-apps-gallery/45018dde6cff86bf8deb67e030600119b0958972/sonarr/icon.svg
+version: "3.0.10"
+tagline: Smart PVR for newsgroup and bittorrent users
+description: >-
+  Sonarr is a PVR for Usenet and BitTorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.
+developer: Sonarr
+website: https://sonarr.tv/
+dependencies: []
+repo: https://github.com/Sonarr/Sonarr
+support: https://github.com/Sonarr/Sonarr/issues
+port: 8989
+gallery:
+  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/sonarr/1.jpg?raw=true
+  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/sonarr/2.jpg?raw=true
+  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/sonarr/3.jpg?raw=true
+path: ""
+releaseNotes: >-
+  This release updates Sonarr from 3.0.9 to 3.0.10
+
+
+  Full tags list here: https://github.com/Sonarr/Sonarr/tags
+defaultUsername: ""
+defaultPassword: ""
+torOnly: false
+permissions:
+  - STORAGE_DOWNLOADS
+submitter: Umbrel
+submission: https://github.com/getumbrel/umbrel-apps/commit/60878f278d544b204d8e7c96240c797f43a9b319
