@@ -2,7 +2,7 @@ manifestVersion: 1
 id: custom-transmission-openvpn
 category: networking
 name: TransmissionVPN
-icon: https://github.com/getumbrel/umbrel-apps-gallery/blob/master/transmission/icon.svg
+icon: https://raw.githubusercontent.com/getumbrel/umbrel-apps-gallery/45018dde6cff86bf8deb67e030600119b0958972/transmission/icon.svg
 version: "4.0.4"
 tagline: A fast, easy and free BitTorrent client with VPN support
 description: >-
@@ -20,9 +20,9 @@ repo: https://github.com/haugene/docker-transmission-openvpn
 support: https://github.com/haugene/docker-transmission-openvpn/issues
 port: 9091
 gallery:
-  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/transmission/1.jpg
-  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/transmission/2.jpg
-  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/transmission/3.jpg
+  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/transmission/1.jpg?raw=true
+  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/transmission/2.jpg?raw=true
+  - https://github.com/getumbrel/umbrel-apps-gallery/blob/master/transmission/3.jpg?raw=true
 path: "/transmission/web/"
 defaultUsername: ""
 defaultPassword: ""
