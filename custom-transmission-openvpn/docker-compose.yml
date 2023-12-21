@@ -1,31 +1,21 @@
-version: "3.7"
-
+version: '3.3'
 services:
-  app_proxy:
-    environment:
-      APP_HOST: custom-transmission-openvpn_server_1
-      APP_PORT: 9091
-
-  server:
-    image: haugene/transmission-openvpn
-    cap_add:
-      - NET_ADMIN
-    devices:
-      - /dev/net/tun:/dev/net/tun
-    environment:
-      - OPENVPN_PROVIDER=PIA
-      - OPENVPN_CONFIG=france
-      - OPENVPN_USERNAME=user
-      - OPENVPN_PASSWORD=pass
-      - LOCAL_NETWORK=192.168.0.0/16
-      - PUID=1000
-      - PGID=1000
-    volumes:
-      - '/home/server/umbrel/app-data/custom-transmission-openvpn/data:/data'
-      - '/home/server/umbrel/app-data/custom-transmission-openvpn/data/config:/config'
-      - 'home/server/drive'
-    ports:
-      - '9091:9091'
-      - '51413:51413'
-      - '51413:51413/udp'
-    restart: on-failure
+    transmission-openvpn:
+        cap_add:
+            - NET_ADMIN
+        restart: unless-stopped
+        devices:
+            - /dev/net/tun
+        volumes:
+            - '/home/server/drive:/home/server/drive:rw'
+            - '/home/server/umbrel/app-data/custom-transmission-openvpn/data/config:/config'
+            - './credentials.txt:/config/credentials.txt'
+        environment:
+            - OPENVPN_PROVIDER=SURFSHARK
+            - OPENVPN_CONFIG=ch-zur.prod.surfshark.com_udp.ovpn
+            - OPENVPN_USERNAME=**None**
+            - OPENVPN_PASSWORD=**None**
+            - LOCAL_NETWORK=192.168.1.0/24
+        ports:
+            - '9091:9091'
+        image: haugene/transmission-openvpn
