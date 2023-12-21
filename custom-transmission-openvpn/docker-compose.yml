@@ -9,12 +9,11 @@ services:
         volumes:
             - '/home/server/drive:/home/server/drive:rw'
             - '/home/server/umbrel/app-data/custom-transmission-openvpn/data/config:/config'
-            - './credentials.txt:/config/credentials.txt'
         environment:
             - OPENVPN_PROVIDER=SURFSHARK
-            - OPENVPN_CONFIG=ch-zur.prod.surfshark.com_udp.ovpn
-            - OPENVPN_USERNAME=**None**
-            - OPENVPN_PASSWORD=**None**
+            - OPENVPN_CONFIG=ch-zur.prod.surfshark.com_udp
+            - OPENVPN_USERNAME=set
+            - OPENVPN_PASSWORD=set
             - LOCAL_NETWORK=192.168.1.0/24
         ports:
             - '9091:9091'
