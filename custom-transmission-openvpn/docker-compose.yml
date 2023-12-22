@@ -1,20 +1,22 @@
 version: '3.3'
 services:
-    transmission-openvpn:
-        cap_add:
-            - NET_ADMIN
-        restart: unless-stopped
-        devices:
-            - /dev/net/tun
-        volumes:
-            - '/home/server/drive:/home/server/drive:rw'
-            - '/home/server/umbrel/app-data/custom-transmission-openvpn/data/config:/config'
-        environment:
-            - OPENVPN_PROVIDER=SURFSHARK
-            - OPENVPN_CONFIG=ch-zur.prod.surfshark.com_udp
-            - OPENVPN_USERNAME=set
-            - OPENVPN_PASSWORD=set
-            - LOCAL_NETWORK=192.168.1.0/24
-        ports:
-            - '9091:9091'
-        image: haugene/transmission-openvpn
+  transmission-openvpn:
+    cap_add:
+      - NET_ADMIN
+    restart: unless-stopped
+    devices:
+      - /dev/net/tun
+    volumes:
+      - '/home/server/drive:/home/server/drive:rw'
+      - '/home/server/umbrel/app-data/custom-transmission-openvpn/data/config:/config'
+    environment:
+      - OPENVPN_PROVIDER=SURFSHARK
+      - OPENVPN_CONFIG=ch-zur.prod.surfshark.com_udp
+      - OPENVPN_USERNAME=set
+      - OPENVPN_PASSWORD=set
+      - LOCAL_NETWORK=192.168.1.0/24
+      - "download-dir=/home/server/drive/downloads"
+      - "download-queue-enabled=false"
+    ports:
+      - '9091:9091'
+    image: haugene/transmission-openvpn
